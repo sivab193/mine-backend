@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node src/index.js",
+    "start": "npm run build && node ./build/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
     "prisma": "cd src/prisma && prisma generate && cd ~",
-    "vercel-build": "cd src/prisma && prisma generate && prisma migrate deploy && cd ~ && next build"
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run build-balel",
+    "build-babel": "babel -d ./build ./src -s"
   },
   "keywords": [],
   "author": "",
