@@ -9,7 +9,7 @@
     "dev": "nodemon --exec babel-node src/index.js",
     "prisma": "cd src/prisma && prisma generate && cd ~",
     "clean": "rm -rf build && mkdir build",
-    "build": "npm run clean && npm run build-balel",
+    "build": "npm run clean && npm run build-babel",
     "build-babel": "babel -d ./build ./src -s"
   },
   "keywords": [],
