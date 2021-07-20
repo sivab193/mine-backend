@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model game_scores {
+  team_id       Int  @id
+  current_round Int  @default(0)
+  r1_time       Int?
+  r1_clicks     Int?
+  r2_time       Int?
+  r2_clicks     Int?
+  r3_time       Int?
+  r3_clicks     Int?
+  r4_time       Int?
+  r4_clicks     Int?
+  r5_time       Int?
+  r5_clicks     Int?
+}

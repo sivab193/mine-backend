@@ -1,0 +1,39 @@
+type Query {
+    teamscore(data: teamScoreQueryInput!):scores
+}
+
+type Mutation {
+    updateScore(data: updateScoreInput!): Boolean!
+    nextRound(data: updateInput!): Boolean!
+}
+
+input teamScoreQueryInput{
+    team_id:Int!
+}
+
+input updateInput{
+    team_id:Int!
+    current_round:Int!
+}
+
+input updateScoreInput{
+    team_id:Int!
+    current_round:Int!
+    time:Int!
+    clicks:Int!
+}
+
+type scores{
+    team_id: Int
+    current_round: Int
+    r1_time: Int
+    r2_time: Int
+    r3_time: Int
+    r4_time: Int
+    r5_time: Int
+    r1_clicks: Int
+    r2_clicks: Int
+    r3_clicks: Int
+    r4_clicks: Int
+    r5_clicks: Int
+}
