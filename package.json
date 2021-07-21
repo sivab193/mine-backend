@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node ./public/index.js",
+    "start": "babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
-    "prisma": "cd src/prisma && prisma generate && cd ~",
-    "clean": "rm -rf public && mkdir public",
-    "build": "npm run clean && npm run build-babel",
-    "build-babel": "babel -d ./public ./src -s"
+    "prisma": "cd src/prisma && prisma generate && cd ~"
   },
   "keywords": [],
   "author": "",
