@@ -1,5 +1,6 @@
 type Query {
     teamscore(data: teamScoreQueryInput!):scores
+    teamLogin(data: teamLoginQueryInput!):login
 }
 
 type Mutation {
@@ -8,6 +9,10 @@ type Mutation {
 }
 
 input teamScoreQueryInput{
+    team_id:Int!
+}
+
+input teamLoginQueryInput{
     team_id:Int!
 }
 
@@ -25,6 +30,7 @@ input updateScoreInput{
 
 type scores{
     team_id: Int
+    roll_no: Int
     current_round: Int
     r1_time: Int
     r2_time: Int
@@ -36,4 +42,10 @@ type scores{
     r3_clicks: Int
     r4_clicks: Int
     r5_clicks: Int
+}
+
+type login{
+    team_id: Int
+    roll_no: Int
+    current_round: Int
 }

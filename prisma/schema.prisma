@@ -9,7 +9,10 @@ datasource db {
 
 model game_scores {
   team_id       Int  @id
+  roll_no       Int
   current_round Int  @default(0)
+  r0_time       Int?
+  r0_clicks     Int?
   r1_time       Int?
   r1_clicks     Int?
   r2_time       Int?

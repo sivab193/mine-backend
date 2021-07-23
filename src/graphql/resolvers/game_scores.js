@@ -13,6 +13,20 @@ module.exports={
                 t.team_id = null
             }
             return t
+        },
+
+        async teamLogin(parent, {data}, {prisma}, info){
+            let t = await prisma.game_scores.findUnique({
+                where: {
+                    ...data
+                },
+                select:{
+                    team_id:true,
+                    current_round:true,
+                    roll_no:true
+                }
+            })
+            return t
         }
     },
     Mutation:{
